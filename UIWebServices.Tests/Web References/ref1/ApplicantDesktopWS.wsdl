@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="application_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getApplicationResult" type="tns:Application" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Application" />
+      <s:element name="setApplication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="application" type="tns:Application" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setApplicationResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:getApplication" />
+  </wsdl:message>
+  <wsdl:message name="getApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:getApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="setApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:setApplication" />
+  </wsdl:message>
+  <wsdl:message name="setApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:setApplicationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ApplicantDesktopWSSoap">
+    <wsdl:operation name="getApplication">
+      <wsdl:input message="tns:getApplicationSoapIn" />
+      <wsdl:output message="tns:getApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setApplication">
+      <wsdl:input message="tns:setApplicationSoapIn" />
+      <wsdl:output message="tns:setApplicationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ApplicantDesktopWSSoap" type="tns:ApplicantDesktopWSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getApplication">
+      <soap:operation soapAction="http://tempuri.org/getApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setApplication">
+      <soap:operation soapAction="http://tempuri.org/setApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ApplicantDesktopWSSoap12" type="tns:ApplicantDesktopWSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getApplication">
+      <soap12:operation soapAction="http://tempuri.org/getApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setApplication">
+      <soap12:operation soapAction="http://tempuri.org/setApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ApplicantDesktopWS">
+    <wsdl:port name="ApplicantDesktopWSSoap" binding="tns:ApplicantDesktopWSSoap">
+      <soap:address location="http://localhost:58065/ApplicantDesktopWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ApplicantDesktopWSSoap12" binding="tns:ApplicantDesktopWSSoap12">
+      <soap12:address location="http://localhost:58065/ApplicantDesktopWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

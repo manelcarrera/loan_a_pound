@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="UIWebServices.Tests.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="UIWebServices_Tests_ref1_ApplicantDesktopWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:58065/ApplicantDesktopWS.asmx</Value>
+    </Setting>
+    <Setting Name="UIWebServices_Tests_ref2_UnderwritterDesktopWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:58065/UnderwritterDesktopWS.asmx</Value>
+    </Setting>
+    <Setting Name="UIWebServices_Tests_ref3_AdminDesktopWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:58065/AdminDesktopWS.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
